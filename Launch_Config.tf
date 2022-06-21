@@ -1,4 +1,4 @@
-  region = "ap-south-1"
+  region = "eu-central-1"
 }
  
 resource "aws_security_group" "instance" {
@@ -25,7 +25,7 @@ resource "aws_security_group" "instance" {
   }
 }
 resource "aws_launch_configuration" "example" {
-  image_id                    = "ami-068257025f72f470d"
+  image_id                    = "ami-0a1ee2fb28fe05df3"
   instance_type               = "t2.micro"
   security_groups             = [aws_security_group.instance.id]
   associate_public_ip_address = true
@@ -64,7 +64,7 @@ resource "aws_autoscaling_group" "example" {
  
   tag {
     key                 = "Name"
-    value               = "terraform-asg-example"
+    value               = "terraform-asg-ex"
     propagate_at_launch = true
  
   }
